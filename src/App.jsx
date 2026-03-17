@@ -1,11 +1,13 @@
 // import useState from react
+import { useState } from 'react';
+
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 
 function App() {
-  // create your count variables
+  const [count, setCount] = useState(0);
 
   return (
     <>
@@ -21,20 +23,37 @@ function App() {
             Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
           </p>
         </div>
+        {/* Button to increase count */}
         <button
           className="counter"
-          // on click increase count by 1
+          onClick={() => setCount(count + 1)}
         >
-          Display Live Count Here: 
+          Display Live Count Here: {count}
         </button>
 
-        {/* On your own, create a second button that decreases the count  */}
+        {/* Button to decrease count */}
+        <button
+          className="counter"
+          onClick={() => setCount(count - 1)}
+        >
+          Decrease Count
+        </button>
 
+        {/* Button to multiply count by -1 */}
+        <button
+          className="counter"
+          onClick={() => setCount(count * -1)}
+        >
+          Multiply by -1
+        </button>
 
-        {/* On your own, create a third button that multiples the count by negative 1  */}
-
-
-        {/* On your own, create a fourth button that multiples the count by positive 10  */}
+        {/* Button to multiply count by 10 */}
+        <button
+          className="counter"
+          onClick={() => setCount(count * 10)}
+        >
+          Multiply by 10
+        </button>
       </section>
 
       <div className="ticks"></div>
